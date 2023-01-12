@@ -3,6 +3,15 @@
 
 # Projeto do instituto Taqtile, com intenção de profissionalizar na area de desenvolvimento.
 
+# Environment and tools
+Node: 16.18.11
+React-dom: 18.0.10
+Visual code
+Linguagem utilizada JavaScript em React com TypeScript
+
+# Steps to run and debug
+
+Projeto no iniciado!!!
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
