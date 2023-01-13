@@ -1,15 +1,16 @@
 import React from 'react'
 
-import { WrapperLogin } from './form-style';
+import { WrapperLogin, Form } from './form-style';
 import { Title } from '../title/title';
 import { Input } from '../input/input';
-import { Btn } from '../button/button';
+import { Button } from '../button/button';
+
 
 export const FormLogin = ():JSX.Element => 
-         <form>
+         <Form>
              <WrapperLogin>
                 <Title />
                 <Input />
-                <Btn />
+                <Button />
              </WrapperLogin>
-        </form>
+        </Form>

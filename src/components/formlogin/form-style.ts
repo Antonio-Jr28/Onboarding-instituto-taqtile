@@ -5,3 +5,5 @@ export const WrapperLogin = styled.div`
     flex-direction: column; 
     align-items: center;
 `
+
+export const Form = styled.form``
