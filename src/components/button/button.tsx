@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { ButtonStyle } from './button-style';
+import { BtnStyle } from './button-style';
 
-export const Button = ():JSX.Element => <ButtonStyle>Enviar</ButtonStyle>;
+export const Btn = ():JSX.Element => <BtnStyle type='submit'>to go</BtnStyle>
+
 
 

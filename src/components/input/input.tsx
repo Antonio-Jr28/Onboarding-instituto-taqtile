@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 import { InputStyle } from './input-style';
 
 export const Input = ():JSX.Element =>
@@ -13,6 +12,7 @@ export const Input = ():JSX.Element =>
                 <InputStyle
                 type='password'
                 placeholder='Password'
-                pattern="\d{7,7}"
+                pattern="/^
+                (?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z$*&@#]{7,}"
                 required/>
     </>;
