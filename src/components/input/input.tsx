@@ -1,6 +1,15 @@
 import React from 'react'
 
-import { InputEmail, InputPassword } from './style-input';
+import { InputStyle } from './input-style';
 
-export const Input = ():JSX.Element => <><InputEmail></InputEmail> <InputPassword></InputPassword></>;
+export const Input = ():JSX.Element =>
+    <>
+        <InputStyle
+        type='email'
+        placeholder='E-mail'/>
+        
+        <InputStyle
+        type='password'
+        placeholder='password'/>
+    </>;
 
