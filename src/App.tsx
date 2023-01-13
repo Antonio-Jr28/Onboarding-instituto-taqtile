@@ -1,19 +1,10 @@
 import React from 'react';
 
-import { Title } from "./components/title/title";
-import { Input } from './components/input/input'
-import { Button } from './components/button/button'
-import { LoginStyle } from './style-app';
+import { FormLogin } from './components/formlogin/form-login'
 
-
-export function App() {
+export const App = ():JSX.Element => {
   return (
-    <LoginStyle>
-    <Title />
-    <Input />
-    <Button />
-    </LoginStyle>
+        <FormLogin />
   )
 }
-
 
