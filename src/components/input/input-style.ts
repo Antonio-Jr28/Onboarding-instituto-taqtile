@@ -6,4 +6,3 @@ export const InputStyle = styled.input`
     border-radius: 5px;
     background: beige;
 `
-
