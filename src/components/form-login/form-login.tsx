@@ -28,7 +28,6 @@ export const FormLogin = ():JSX.Element => {
             const tokenValue = e.login.token;
             localStorage.setItem('token', tokenValue);
             
-
             navigate('/pageuser');
         },
     });
