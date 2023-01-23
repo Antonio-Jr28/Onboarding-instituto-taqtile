@@ -28,8 +28,7 @@ export const FormLogin = ():JSX.Element => {
             const tokenValue = e.login.token;
             localStorage.setItem('token', tokenValue);
             
-
-            navigate('/pageuser/:0');
+            navigate('/pageuser');
         },
     });
     const enviarForm = (e: { preventDefault: () => void }) => {
