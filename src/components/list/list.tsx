@@ -59,11 +59,9 @@ export const ListUsers = ():JSX.Element => {
 
       <Navigation>
           <BtnPrevious onClick={previusPage} disabled={!previousPageexists}>Anterior</BtnPrevious>
-
           <BtnNext onClick={nextPage} disabled={!nextPageexists}>Proximo</BtnNext>
         </Navigation> 
     </Wrapper>
-    )
 }
   
 
