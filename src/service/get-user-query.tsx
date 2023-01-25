@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client'
 
-export const UserQuery = gql`
+export const GetUserQuery = gql`
     query UsersList($data: PageInput){
     users(data: $data) {
         nodes{

@@ -1,8 +1,22 @@
 import React from 'react'
 
 import { Whapper, WhapperTitle, UsersName, UsersEmail, Container, BoxName, BoxEmail } from './list-style'
+import { GetUserQuery } from "../../service/get-user-query";
+import { useQuery } from '@apollo/client';
+
 
 export const ListUsers = ():JSX.Element => {
+
+  const token = localStorage.token;
+    console.log(token); 
+  const { data } = useQuery(GetUserQuery, {
+  context: {
+      headers: {
+        Authorization: token,
+      },
+    },
+  });
+    console.log(data);
 
   const Users = [
     {name: 'Antonio',
