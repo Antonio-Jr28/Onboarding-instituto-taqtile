@@ -52,6 +52,11 @@ export const ListUsers = ():JSX.Element => {
     setOfsset(offset - limit);
   };
 
+<<<<<<< HEAD
+=======
+  
+  
+>>>>>>> 7086adb (fininh list users)
     return (
     <Wrapper>
       <Title> Lista de Usuarios </Title>
@@ -60,6 +65,7 @@ export const ListUsers = ():JSX.Element => {
         <BoxName>
           <UsersName>Nome</UsersName>
           {data?.users?.nodes?.map((user:UserType)=>
+<<<<<<< HEAD
           <Details key={`column-name${user.id}`}>
           <p>{user.name}</p>
         </Details>
@@ -74,6 +80,15 @@ export const ListUsers = ():JSX.Element => {
         <BtnDetails onClick={() => DetailsUser(user.id)}>Ver</BtnDetails>
         </Details> 
         )} 
+=======
+          <p key={user.id}>{user.name}</p>)}
+        </BoxName>
+
+        <BoxEmail>
+          <UsersEmail>Email</UsersEmail>
+          {data?.users?.nodes?.map((user:UserType)=>
+          <p key={user.id}>{user.email}</p>)}
+>>>>>>> 7086adb (fininh list users)
         </BoxEmail>
       </Container>
 
