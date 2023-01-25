@@ -5,7 +5,6 @@ import { getUsersQuery } from "../../service/get-user-query";
 import { useQuery } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 
-
 interface UserType {
   email: 'string',
   name: 'string',
