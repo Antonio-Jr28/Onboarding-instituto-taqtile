@@ -14,18 +14,26 @@ export const WhapperTitle = styled.h1`
     text-align: center;
     `
 
-export const UsersName = styled.p`
+export const UsersName = styled.h2`
+    width: 300px;
+    font-size 1.5em;
+    `
+
+export const UsersEmail = styled.h2`
+    width: 300px;
+    font-size 1.5em;
+    `
+
+export const BoxName = styled.div`
     width: 300px;
     `
 
-export const UsersEmail = styled.p`
+export const BoxEmail = styled.div`
     width: 300px;
     `
 
-export const BoxName = styled.p`
-    width: 300px;
-    `
+export const Navigation = styled.div``
+    
+export const BtnPrevious = styled.button``
 
-export const BoxEmail = styled.p`
-    width: 300px;
-    `
+export const BtnNext = styled.button``

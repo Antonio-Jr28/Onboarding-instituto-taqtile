@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState} from 'react'
 
-import { Whapper, WhapperTitle, UsersName, UsersEmail, Container, BoxName, BoxEmail } from './list-style'
+import { Whapper, WhapperTitle, UsersName, UsersEmail, Container, BoxName, BoxEmail, Navigation, BtnPrevious, BtnNext } from './list-style'
 import { GetUserQuery } from "../../service/get-user-query";
 import { useQuery } from '@apollo/client';
 
@@ -12,18 +12,30 @@ interface UserType {
 export const ListUsers = ():JSX.Element => {
 
   const token = localStorage.token;
-    console.log(token); 
+  const limit = 20;
+  const [offset, setOfsset] = useState(0);
   const { data } = useQuery(GetUserQuery, {
   context: {
       headers: {
         Authorization: token,
       },
     },
+    variables: {
+      offset: offset,
+      limit: limit
+    },
   });
-    console.log(data);
+ 
+  const nextPageexists = data?.users?.pageInfo?.hasNextPage;
+  const previousPageexists = data?.users?.pageInfo?.hasPreviousPage;
 
-  
-  
+  const nextPage = () => {
+    setOfsset(offset + limit);
+  };
+  const previusPage = () => {
+    setOfsset(offset - limit);
+  };
+    console.log(offset);
     return (
     <Whapper>
       <WhapperTitle> Lista de Usuarios</WhapperTitle>
@@ -40,6 +52,12 @@ export const ListUsers = ():JSX.Element => {
           <p key={user.id}>{user.email}</p>)}
         </BoxEmail>
       </Container>
+
+      <Navigation>
+          <BtnPrevious onClick={previusPage} disabled={!previousPageexists}>Anterior</BtnPrevious>
+
+          <BtnNext onClick={nextPage} disabled={!nextPageexists}>Proximo</BtnNext>
+        </Navigation> 
     </Whapper>
     )
 }
