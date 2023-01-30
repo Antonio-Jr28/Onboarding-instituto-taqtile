@@ -1,9 +1,17 @@
 import React, { useState} from 'react'
 
+<<<<<<< HEAD
 import { Wrapper, Title, UsersName, UsersEmail, Container, BoxName, BoxEmail, Navigation, BtnPrevious, BtnNext, BtnCreateUser, Details, BtnDetails } from './list-style'
 import { getUsersQuery } from "../../service/get-user-query";
 import { useQuery } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
+=======
+import { Whapper, WhapperTitle, UsersName, UsersEmail, Container, BoxName, BoxEmail, Navigation, BtnPrevious, BtnNext } from './list-style'
+import { getUsersQuery } from "../../service/get-user-query";
+import { useQuery } from '@apollo/client';
+import { useNavigate } from 'react-router-dom';
+
+>>>>>>> 81abbc9 (changes in the request)
 
 interface UserType {
   id: number | 'string';
@@ -53,10 +61,13 @@ export const ListUsers = ():JSX.Element => {
   };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   
   
 >>>>>>> 7086adb (fininh list users)
+=======
+>>>>>>> 81abbc9 (changes in the request)
     return (
     <Wrapper>
       <Title> Lista de Usuarios </Title>
