@@ -1,9 +1,17 @@
 import React, { useState} from 'react'
 
+<<<<<<< HEAD
 import { Wrapper, Title, UsersName, UsersEmail, Container, BoxName, BoxEmail, Navigation, BtnPrevious, BtnNext } from './list-style'
 import { getUsersQuery } from "../../service/get-user-query";
 import { useQuery } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
+=======
+import { Whapper, WhapperTitle, UsersName, UsersEmail, Container, BoxName, BoxEmail, Navigation, BtnPrevious, BtnNext } from './list-style'
+import { getUsersQuery } from "../../service/get-user-query";
+import { useQuery } from '@apollo/client';
+import { useNavigate } from 'react-router-dom';
+
+>>>>>>> 81abbc9 (changes in the request)
 
 interface UserType {
   email: 'string',
