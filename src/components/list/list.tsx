@@ -1,17 +1,14 @@
 import React, { useState} from 'react'
 
-<<<<<<< HEAD
+
 import { Wrapper, Title, UsersName, UsersEmail, Container, BoxName, BoxEmail, Navigation, BtnPrevious, BtnNext, BtnCreateUser, Details, BtnDetails } from './list-style'
 import { getUsersQuery } from "../../service/get-user-query";
 import { useQuery } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
-=======
-import { Whapper, WhapperTitle, UsersName, UsersEmail, Container, BoxName, BoxEmail, Navigation, BtnPrevious, BtnNext } from './list-style'
 import { getUsersQuery } from "../../service/get-user-query";
 import { useQuery } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 
->>>>>>> 81abbc9 (changes in the request)
 
 interface UserType {
   id: number | 'string';
@@ -60,12 +57,6 @@ export const ListUsers = ():JSX.Element => {
     setOfsset(offset - limit);
   };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  
-  
->>>>>>> 7086adb (fininh list users)
 =======
 >>>>>>> 81abbc9 (changes in the request)
     return (
@@ -76,7 +67,6 @@ export const ListUsers = ():JSX.Element => {
         <BoxName>
           <UsersName>Nome</UsersName>
           {data?.users?.nodes?.map((user:UserType)=>
-<<<<<<< HEAD
           <Details key={`column-name${user.id}`}>
           <p>{user.name}</p>
         </Details>
@@ -91,15 +81,6 @@ export const ListUsers = ():JSX.Element => {
         <BtnDetails onClick={() => DetailsUser(user.id)}>Ver</BtnDetails>
         </Details> 
         )} 
-=======
-          <p key={user.id}>{user.name}</p>)}
-        </BoxName>
-
-        <BoxEmail>
-          <UsersEmail>Email</UsersEmail>
-          {data?.users?.nodes?.map((user:UserType)=>
-          <p key={user.id}>{user.email}</p>)}
->>>>>>> 7086adb (fininh list users)
         </BoxEmail>
       </Container>
 
