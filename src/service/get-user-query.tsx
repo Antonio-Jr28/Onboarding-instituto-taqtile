@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client'
 
-export const GetUserQuery = gql`
+export const getUsersQuery = gql`
 query UsersList($data: PageInput){
   users(data: $data) {
     nodes{
@@ -15,4 +15,5 @@ query UsersList($data: PageInput){
       hasPreviousPage
     }
   }
-}`
+}
+`;

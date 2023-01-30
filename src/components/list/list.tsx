@@ -1,8 +1,10 @@
 import React, { useState} from 'react'
 
 import { Whapper, WhapperTitle, UsersName, UsersEmail, Container, BoxName, BoxEmail, Navigation, BtnPrevious, BtnNext } from './list-style'
-import { GetUserQuery } from "../../service/get-user-query";
+import { getUsersQuery } from "../../service/get-user-query";
 import { useQuery } from '@apollo/client';
+import { useNavigate } from 'react-router-dom';
+
 
 interface UserType {
   email: 'string',
@@ -10,21 +12,25 @@ interface UserType {
   id: number,  
 }
 export const ListUsers = ():JSX.Element => {
-
+  const navigate = useNavigate();
   const token = localStorage.token;
   const limit = 20;
   const [offset, setOfsset] = useState(0);
-  const { data } = useQuery(GetUserQuery, {
+  const { data } = useQuery(getUsersQuery, {
   context: {
       headers: {
         Authorization: token,
       },
     },
     variables: {
-      offset: offset,
-      limit: limit
-    },
+      data: {
+        offset: offset,
+        limit: limit
+      }
+      }
+    ,  
   });
+  console.log(data);
  
   const nextPageexists = data?.users?.pageInfo?.hasNextPage;
   const previousPageexists = data?.users?.pageInfo?.hasPreviousPage;
@@ -35,7 +41,7 @@ export const ListUsers = ():JSX.Element => {
   const previusPage = () => {
     setOfsset(offset - limit);
   };
-    console.log(offset);
+
     return (
     <Whapper>
       <WhapperTitle> Lista de Usuarios</WhapperTitle>
