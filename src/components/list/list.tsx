@@ -1,25 +1,27 @@
 import React, { useState} from 'react'
 
-<<<<<<< HEAD
-import { Wrapper, Title, UsersName, UsersEmail, Container, BoxName, BoxEmail, Navigation, BtnPrevious, BtnNext } from './list-style'
+import { Wrapper, Title, UsersName, UsersEmail, Container, BoxName, BoxEmail, Navigation, BtnPrevious, BtnNext, BtnCreateUser } from './list-style'
 import { getUsersQuery } from "../../service/get-user-query";
 import { useQuery } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
-=======
-import { Whapper, WhapperTitle, UsersName, UsersEmail, Container, BoxName, BoxEmail, Navigation, BtnPrevious, BtnNext } from './list-style'
-import { getUsersQuery } from "../../service/get-user-query";
-import { useQuery } from '@apollo/client';
-import { useNavigate } from 'react-router-dom';
-
->>>>>>> 81abbc9 (changes in the request)
 
 interface UserType {
-  email: 'string',
-  name: 'string',
-  id: number,  
+  id: number | 'string';
+  email: 'string';
+  name: 'string';
+  phone: 'string';
 }
+
 export const ListUsers = ():JSX.Element => {
+
   const navigate = useNavigate();
+
+  const Createuser = () => {
+    {
+    navigate('/usercreate');
+    }
+  };
+
   const token = localStorage.token;
   const limit = 20;
   const [offset, setOfsset] = useState(0);
@@ -37,6 +39,7 @@ export const ListUsers = ():JSX.Element => {
       }
     ,  
   });
+
   const nextPageexists = data?.users?.pageInfo?.hasNextPage;
   const previousPageexists = data?.users?.pageInfo?.hasPreviousPage;
 
@@ -50,6 +53,7 @@ export const ListUsers = ():JSX.Element => {
     return (
     <Wrapper>
       <Title> Lista de Usuarios </Title>
+        <BtnCreateUser onClick={Createuser}>Novo Usuário</BtnCreateUser>
       <Container>
         <BoxName>
           <UsersName>Nome</UsersName>

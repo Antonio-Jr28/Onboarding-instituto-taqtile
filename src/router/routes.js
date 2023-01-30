@@ -10,7 +10,7 @@ export const MyRoutes = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<PageLogin/>} />
-                <Route path="/pageuser/:offset" element={<PageUser /> } />
+                <Route path="/pageuser/*" element={<PageUser /> } />
                 <Route path="/usercreate" element={<PageAdd />} />
             </Routes>
         </BrowserRouter>

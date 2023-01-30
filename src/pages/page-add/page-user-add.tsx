@@ -1,7 +1,5 @@
 import React from "react";
-import { Title } from "./page-user-add-style";
+import { AddUser } from "../../components/add/add-user";
 
 export const PageAdd = ():JSX.Element => 
-    <Title>
-        Adicionar Usuario
-    </Title>
+    <AddUser />

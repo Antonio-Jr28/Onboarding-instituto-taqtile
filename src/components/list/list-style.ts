@@ -37,3 +37,5 @@ export const Navigation = styled.div``
 export const BtnPrevious = styled.button``
 
 export const BtnNext = styled.button``
+
+export const BtnCreateUser = styled.button``
