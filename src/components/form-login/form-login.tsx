@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ApolloError, useMutation  } from '@apollo/client';
+import { useMutation  } from '@apollo/client';
 import { QueryLogar } from '../../service/request-login';
 
 import { WrapperLogin, Form } from './form-style';
@@ -20,9 +20,8 @@ export const FormLogin = ():JSX.Element => {
     }       
 
    const [login, {loading}] = useMutation(QueryLogar, {
-        onError:(error: ApolloError) => {
+        onError:() => {
             alert('Login ou senha invalido, Por gentileza inserir novamente...');
-            console.log(error);
         },
         onCompleted: (e: any) => {
             const tokenValue = e.login.token;
@@ -33,7 +32,7 @@ export const FormLogin = ():JSX.Element => {
         },
     });
     const enviarForm = (e: { preventDefault: () => void }) => {
-        {console.log(email, password);
+        {
         e.preventDefault();
         login ({
             variables: {

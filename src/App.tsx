@@ -1,6 +1,6 @@
 import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql } from '@apollo/client';
-import { FormLogin } from './components/formlogin/form-login'
+import { FormLogin } from './components/form-login/form-login'
 
 
 const client = new ApolloClient({
