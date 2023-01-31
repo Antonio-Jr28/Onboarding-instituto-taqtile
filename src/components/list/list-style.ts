@@ -39,3 +39,11 @@ export const BtnPrevious = styled.button``
 export const BtnNext = styled.button``
 
 export const BtnCreateUser = styled.button``
+
+export const Details = styled.section`
+    display: flex;
+    align-items: center;
+    `
+export const BtnDetails = styled.button`    
+    margin-left: 10px;  
+    `
