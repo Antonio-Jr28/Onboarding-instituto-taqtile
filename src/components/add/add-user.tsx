@@ -3,7 +3,10 @@ import { ApolloError, useMutation } from "@apollo/client";
 
 import { useNavigate } from "react-router-dom";
 import { createUser } from "../../service/create-user-mutation";
-import { Form, Label, Title, Input, Button, Container, Wrapper, List } from "./add-user-style";
+import { Form, Label, Input, Button, Container, Wrapper, List } from "./add-user-style";
+import { Title } from "../title/title";
+
+
 
 export const AddUser = ():JSX.Element => {
     const today = new Date().toISOString().split('T')[0];

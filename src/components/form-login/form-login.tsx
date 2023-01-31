@@ -7,7 +7,6 @@ import { Title } from '../title/title';
 import { Input } from '../input/input';
 import { Button } from '../button/button';
 
-
 export const FormLogin = ():JSX.Element => {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
@@ -19,7 +18,6 @@ export const FormLogin = ():JSX.Element => {
     const handlePassword = (value:string) => {
     setPassword(value)
     }       
-
    const [login, {loading}] = useMutation(QueryLogar, {
         onError:() => {
             alert('Login ou senha invalido, Por gentileza inserir novamente...');
@@ -27,15 +25,12 @@ export const FormLogin = ():JSX.Element => {
         onCompleted: (e: any) => {
             const tokenValue = e.login.token;
             localStorage.setItem('token', tokenValue);
-            
-
             navigate('/pageuser');
         },
     });
     const enviarForm = (e: { preventDefault: () => void }) => {
         {
-        e.preventDefault();
-        
+        e.preventDefault();   
         login ({
             variables: {
                 data: {email, password },
@@ -43,14 +38,19 @@ export const FormLogin = ():JSX.Element => {
         })
         }
     }
-        
    return (
-
          <Form>
              <WrapperLogin>
-                <Title />
-                <Input email={email} password={password} onChangeEmail={handleEmail} onChangePassword={handlePassword} />
-                <Button LoadingButton={loading} onClick={enviarForm} />
+                <Title text='Bem Vindo(a) à Taqtile!' />
+                
+                <Input 
+                    email={email} 
+                    password={password} 
+                    onChangeEmail={handleEmail} 
+                    onChangePassword={handlePassword} />
+                <Button 
+                LoadingButton={loading} 
+                onClick={enviarForm} />
              </WrapperLogin>
         </Form>
          )

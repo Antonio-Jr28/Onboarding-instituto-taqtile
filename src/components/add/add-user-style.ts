@@ -5,8 +5,6 @@ export const Form = styled.form`
     flex-direction: column;
     width: fit-content;
 `
-export const Title = styled.h1`
-    ` 
 export const Label = styled.label`
     `    
 export const Input = styled.input`

@@ -55,7 +55,7 @@ export const ListUsers = ():JSX.Element => {
 
     return (
     <Wrapper>
-      <Title> Lista de Usuarios </Title>
+      <Title text='Lista de Usuários'/>
         <BtnCreateUser onClick={Createuser}>Novo Usuário</BtnCreateUser>
       <Container>
         <BoxName>

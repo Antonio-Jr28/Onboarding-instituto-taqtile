@@ -2,7 +2,8 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { useParams } from "react-router-dom";
 import { getDetails } from '../../service/get-user-details-query';
-import { ContainerUser, ListUser, SectionUser, SortedList, TitleUser } from './details-user-style';
+import { ContainerUser, ListUser, SectionUser, SortedList } from './details-user-style';
+import { Title } from '../title/title';
 
 
 
@@ -23,7 +24,7 @@ export const DetailsUser = () => {
     
     return (
        <SectionUser>
-        <TitleUser>Detalhes do Usuário</TitleUser>
+        <Title text='Detalhes do Usuário'/>
         <ContainerUser>
             <SortedList>
                 <ListUser>Nome do Usuário: {data?.user?.name} </ListUser>
