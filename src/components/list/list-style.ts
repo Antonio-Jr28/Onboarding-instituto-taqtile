@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Whapper = styled.section`
+export const Wrapper = styled.section`
     font-size: 2em;
     `
 
@@ -10,7 +10,7 @@ export const Container = styled.section`
     flex-direction: row;
     `
 
-export const WhapperTitle = styled.h1`    
+export const Title = styled.h1`    
     text-align: center;
     `
 

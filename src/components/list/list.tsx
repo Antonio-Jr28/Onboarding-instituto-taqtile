@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
 
-import { Whapper, WhapperTitle, UsersName, UsersEmail, Container, BoxName, BoxEmail, Navigation, BtnPrevious, BtnNext } from './list-style'
+import { Wrapper, Title, UsersName, UsersEmail, Container, BoxName, BoxEmail, Navigation, BtnPrevious, BtnNext } from './list-style'
 import { getUsersQuery } from "../../service/get-user-query";
 import { useQuery } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
@@ -30,8 +30,6 @@ export const ListUsers = ():JSX.Element => {
       }
     ,  
   });
-  console.log(data);
- 
   const nextPageexists = data?.users?.pageInfo?.hasNextPage;
   const previousPageexists = data?.users?.pageInfo?.hasPreviousPage;
 
@@ -43,19 +41,19 @@ export const ListUsers = ():JSX.Element => {
   };
 
     return (
-    <Whapper>
-      <WhapperTitle> Lista de Usuarios</WhapperTitle>
+    <Wrapper>
+      <Title> Lista de Usuarios </Title>
       <Container>
         <BoxName>
           <UsersName>Nome</UsersName>
           {data?.users?.nodes?.map((user:UserType)=>
-          <p key={user.id}>{user.name}</p>)}
+          <p key={`column-name${user.id}`}>{user.name}</p>)}
         </BoxName>
 
         <BoxEmail>
           <UsersEmail>Email</UsersEmail>
           {data?.users?.nodes?.map((user:UserType)=>
-          <p key={user.id}>{user.email}</p>)}
+          <p key={`column-email${user.id}`}>{user.email}</p>)}
         </BoxEmail>
       </Container>
 
@@ -64,7 +62,7 @@ export const ListUsers = ():JSX.Element => {
 
           <BtnNext onClick={nextPage} disabled={!nextPageexists}>Proximo</BtnNext>
         </Navigation> 
-    </Whapper>
+    </Wrapper>
     )
 }
   
