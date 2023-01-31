@@ -28,12 +28,14 @@ export const FormLogin = ():JSX.Element => {
             const tokenValue = e.login.token;
             localStorage.setItem('token', tokenValue);
             
-            navigate('/pageuser');
+
+            navigate('/pageuser/:0');
         },
     });
     const enviarForm = (e: { preventDefault: () => void }) => {
         {
         e.preventDefault();
+        
         login ({
             variables: {
                 data: {email, password },
