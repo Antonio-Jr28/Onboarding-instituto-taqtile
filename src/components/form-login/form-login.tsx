@@ -49,6 +49,7 @@ export const FormLogin = ():JSX.Element => {
                     onChangeEmail={handleEmail} 
                     onChangePassword={handlePassword} />
                 <Button 
+                text="Entrar"
                 LoadingButton={loading} 
                 onClick={enviarForm} />
              </WrapperLogin>

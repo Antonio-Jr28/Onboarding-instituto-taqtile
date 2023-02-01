@@ -4,7 +4,8 @@ import { BtnStyle } from './button-style';
 
 interface ButtonProps {
     LoadingButton: boolean;
-    onClick: (e: { preventDefault: () => void }) => void;
+    text: string;
+    onClick?: (e: { preventDefault: () => void }) => void;
 }
 
 export const Button = ( props:ButtonProps ):JSX.Element => {
@@ -12,7 +13,7 @@ export const Button = ( props:ButtonProps ):JSX.Element => {
     
     return (    
     <BtnStyle type='submit' disabled={props.LoadingButton} onClick={props.onClick}>
-    {props.LoadingButton ? 'Loading...' : 'Entrar'}</BtnStyle>
+    {props.LoadingButton ? 'Loading...' : props.text}</BtnStyle>
 
     )
 
