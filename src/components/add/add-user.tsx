@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { createUser } from "../../service/create-user-mutation";
 import { Form, Label, Input, Button, Container, Wrapper, List } from "./add-user-style";
 import { Title } from "../title/title";
+import { InputStyle } from "../input/input-style";
 
 
 
@@ -54,7 +55,7 @@ export const AddUser = ():JSX.Element => {
             <Title>Criar Conta </Title>
 
             <Label>Name:</Label>
-            <Input
+            <InputStyle
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 placeholder='Nome completo'
@@ -63,7 +64,7 @@ export const AddUser = ():JSX.Element => {
                 title='Nome e Sobrenome' />
             
             <Label>Telefone:</Label>
-            <Input 
+            <InputStyle 
                 onChange={(e) => setPhone(e.target.value)}
                 value={phone}
                 placeholder='Ex: (DDD)94002-8922'
@@ -73,7 +74,7 @@ export const AddUser = ():JSX.Element => {
                 title='Telefone válido com no minimo 9 caracteres e o DDD.' />
 
             <Label>E-Mail:</Label>    
-            <Input 
+            <InputStyle 
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 name='email'
@@ -97,7 +98,7 @@ export const AddUser = ():JSX.Element => {
         <Wrapper>    
             <Container>
                 <Label>Data de Nascimento</Label>
-                <Input 
+                <InputStyle 
                 onChange={(e) => setBirthDate(e.target.value)}
                 value={birthDate}
                 type='date'

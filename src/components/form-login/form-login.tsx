@@ -41,7 +41,7 @@ export const FormLogin = ():JSX.Element => {
    return (
          <Form>
              <WrapperLogin>
-                <Title text='Bem Vindo(a) à Taqtile!' />
+                <Title text='Bem Vindo(a) à Taqtile' />
                 
                 <Input 
                     email={email} 
