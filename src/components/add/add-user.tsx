@@ -3,7 +3,7 @@ import { ApolloError, useMutation } from "@apollo/client";
 
 import { useNavigate } from "react-router-dom";
 import { createUser } from "../../service/create-user-mutation";
-import { Form, Label, Input, Container, Wrapper, List } from "./add-user-style";
+import { Form, Label, Input, Container, Wrapper, List, Box } from "./add-user-style";
 import { Title } from "../title/title";
 import { InputStyle } from "../input/input-style";
 
@@ -51,13 +51,16 @@ export const AddUser = ():JSX.Element => {
     
     
     return (
+    <Box>    
         <Form onSubmit={toSend}>
-            <Title>Criar Conta </Title>
+            <Title text="Criar Conta" />
+
 
             <Label>Name:</Label>
             <InputStyle
                 onChange={(e) => setName(e.target.value)}
                 value={name}
+                name="name"
                 placeholder='Nome completo'
                 type='username'
                 required
@@ -67,6 +70,7 @@ export const AddUser = ():JSX.Element => {
             <InputStyle 
                 onChange={(e) => setPhone(e.target.value)}
                 value={phone}
+                name="phone"
                 placeholder='Ex: (DDD)94002-8922'
                 type='tel'
                 required
@@ -85,7 +89,7 @@ export const AddUser = ():JSX.Element => {
                 title='Digite um endereço de email valido. '/>
 
             <Label>Senha:</Label>
-            <Input 
+            <InputStyle 
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 name='Password'
@@ -98,7 +102,7 @@ export const AddUser = ():JSX.Element => {
         <Wrapper>    
             <Container>
                 <Label>Data de Nascimento</Label>
-                <InputStyle 
+                <Input 
                 onChange={(e) => setBirthDate(e.target.value)}
                 value={birthDate}
                 type='date'
@@ -106,7 +110,9 @@ export const AddUser = ():JSX.Element => {
                 max={today}
                 title='Somente datas anteriores'/>
             </Container>
-            <List onChange={(e) => setRole(e.target.value)} value={role} name="role" placeholder="admin ou user" required>
+            <Label>Tipo</Label>
+            <List 
+                onChange={(e) => setRole(e.target.value)} value={role} name="role" placeholder="admin ou user" required>
                 <option></option>
                 <option value='admin'>Admin</option>
                 <option value='user'>User</option>
@@ -117,7 +123,10 @@ export const AddUser = ():JSX.Element => {
             <Button 
             text="Cadastrar"
             LoadingButton={loadingBtn}
+            type='submit' 
+            disabled={loadingBtn}
             />
         </Form>
+    </Box>    
     )
 }

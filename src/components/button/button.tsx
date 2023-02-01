@@ -5,6 +5,8 @@ import { BtnStyle } from './button-style';
 interface ButtonProps {
     LoadingButton: boolean;
     text: string;
+    type?:string;
+    disabled?:boolean;
     onClick?: (e: { preventDefault: () => void }) => void;
 }
 
