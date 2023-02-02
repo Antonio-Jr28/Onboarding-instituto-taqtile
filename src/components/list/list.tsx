@@ -5,10 +5,6 @@ import { Wrapper, Title, UsersName, UsersEmail, Container, BoxName, BoxEmail, Na
 import { getUsersQuery } from "../../service/get-user-query";
 import { useQuery } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
-import { getUsersQuery } from "../../service/get-user-query";
-import { useQuery } from '@apollo/client';
-import { useNavigate } from 'react-router-dom';
-
 
 interface UserType {
   id: number | 'string';
@@ -57,8 +53,6 @@ export const ListUsers = ():JSX.Element => {
     setOfsset(offset - limit);
   };
 
-=======
->>>>>>> 81abbc9 (changes in the request)
     return (
     <Wrapper>
       <Title> Lista de Usuarios </Title>
