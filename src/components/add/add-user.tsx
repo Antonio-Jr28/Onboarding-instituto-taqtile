@@ -124,7 +124,6 @@ export const AddUser = ():JSX.Element => {
             text="Cadastrar"
             LoadingButton={loadingBtn}
             type='submit' 
-            disabled={loadingBtn}
             />
         </Form>
     </Box>    
