@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 export const BtnStyle = styled.button`
-    width: 200px;
-    margin-top: 30px;  
-    border: solid 5px gray;
-    border-radius: 15px; 
+    font-size: 16px;
+    font-weight: bold;
+    background-color: steelblue;
     color: white;
-    background: blue;
+    height: 33px;
+    margin-top: 10px;
+    width: 140px;
+    border-radius: 10px;
 `;

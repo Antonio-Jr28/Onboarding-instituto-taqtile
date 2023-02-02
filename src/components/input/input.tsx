@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { InputStyle } from './input-style';
+import { InputStyle, Label } from './input-style';
 
 
 interface InputProps{
@@ -21,6 +21,7 @@ export const Input = (props:InputProps):JSX.Element => {
 
         return (
         <>
+        <Label>Email:</Label>
         <InputStyle
                 onChange={(e) => handleEmail(e.target.value)}
                 value={props.email}
@@ -31,8 +32,8 @@ export const Input = (props:InputProps):JSX.Element => {
                 pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
                 title='Digite um endereço de email valido. (NOTA:com letras minusculas)'
                 id='mail'/>
-
-                <InputStyle
+        <Label>Senha</Label>
+        <InputStyle
                 onChange={(e) => handlePassword(e.target.value)}
                 value={props.password}
                 name='password'

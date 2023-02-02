@@ -1,11 +1,11 @@
 import React, { useState} from 'react'
 
 
-import { Wrapper, Title, UsersName, UsersEmail, Container, BoxName, BoxEmail, Navigation, BtnPrevious, BtnNext, BtnCreateUser, Details, BtnDetails } from './list-style'
+import { Wrapper, UsersName, UsersEmail, Container, BoxName, BoxEmail, Navigation, BtnPrevious, BtnNext, BtnCreateUser, Details, BtnDetails, WrapperBtn } from './list-style'
 import { getUsersQuery } from "../../service/get-user-query";
 import { useQuery } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
-
+import { Title } from '../title/title';
 interface UserType {
   id: number | 'string';
   email: 'string';
@@ -55,8 +55,10 @@ export const ListUsers = ():JSX.Element => {
 
     return (
     <Wrapper>
-      <Title> Lista de Usuarios </Title>
-        <BtnCreateUser onClick={Createuser}>Novo Usuário</BtnCreateUser>
+      <Title text='Lista de Usuários'/>
+        <WrapperBtn>
+          <BtnCreateUser onClick={Createuser}>Novo Usuário</BtnCreateUser>
+          </WrapperBtn>
       <Container>
         <BoxName>
           <UsersName>Nome</UsersName>

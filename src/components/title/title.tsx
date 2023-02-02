@@ -2,6 +2,12 @@ import React from 'react'
 
 import { MainTitle } from './style-title'
 
-export const Title = ():JSX.Element => <MainTitle>Bem-vindo(a) à Taqtile!</MainTitle>;
-  
+interface TitleProps {
+   text:string
+}
 
+export const Title = (props:TitleProps):JSX.Element => {
+    return (
+    <MainTitle>{props.text}</MainTitle>
+    )
+}

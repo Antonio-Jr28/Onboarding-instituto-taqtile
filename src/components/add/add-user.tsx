@@ -3,7 +3,11 @@ import { ApolloError, useMutation } from "@apollo/client";
 
 import { useNavigate } from "react-router-dom";
 import { createUser } from "../../service/create-user-mutation";
-import { Form, Label, Title, Input, Button, Container, Wrapper, List } from "./add-user-style";
+import { Form, Label, Input, Container, Wrapper, List, Box } from "./add-user-style";
+import { Title } from "../title/title";
+import { InputStyle } from "../input/input-style";
+
+import { Button } from "../button/button"
 
 export const AddUser = ():JSX.Element => {
     const today = new Date().toISOString().split('T')[0];
@@ -47,22 +51,26 @@ export const AddUser = ():JSX.Element => {
     
     
     return (
+    <Box>    
         <Form onSubmit={toSend}>
-            <Title>Criar Conta </Title>
+            <Title text="Criar Conta" />
+
 
             <Label>Name:</Label>
-            <Input
+            <InputStyle
                 onChange={(e) => setName(e.target.value)}
                 value={name}
+                name="name"
                 placeholder='Nome completo'
                 type='username'
                 required
                 title='Nome e Sobrenome' />
             
             <Label>Telefone:</Label>
-            <Input 
+            <InputStyle 
                 onChange={(e) => setPhone(e.target.value)}
                 value={phone}
+                name="phone"
                 placeholder='Ex: (DDD)94002-8922'
                 type='tel'
                 required
@@ -70,7 +78,7 @@ export const AddUser = ():JSX.Element => {
                 title='Telefone válido com no minimo 9 caracteres e o DDD.' />
 
             <Label>E-Mail:</Label>    
-            <Input 
+            <InputStyle 
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 name='email'
@@ -81,7 +89,7 @@ export const AddUser = ():JSX.Element => {
                 title='Digite um endereço de email valido. '/>
 
             <Label>Senha:</Label>
-            <Input 
+            <InputStyle 
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 name='Password'
@@ -102,7 +110,9 @@ export const AddUser = ():JSX.Element => {
                 max={today}
                 title='Somente datas anteriores'/>
             </Container>
-            <List onChange={(e) => setRole(e.target.value)} value={role} name="role" placeholder="admin ou user" required>
+            <Label>Tipo</Label>
+            <List 
+                onChange={(e) => setRole(e.target.value)} value={role} name="role" placeholder="admin ou user" required>
                 <option></option>
                 <option value='admin'>Admin</option>
                 <option value='user'>User</option>
@@ -110,9 +120,12 @@ export const AddUser = ():JSX.Element => {
             </List>
 
         </Wrapper>
-            <Button type='submit' disabled={loadingBtn}>
-                {loadingBtn ? 'Loading...' : 'Cadastrar'}
-            </Button>
+            <Button 
+            text="Cadastrar"
+            LoadingButton={loadingBtn}
+            type='submit' 
+            />
         </Form>
+    </Box>    
     )
 }

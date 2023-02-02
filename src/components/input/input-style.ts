@@ -1,8 +1,15 @@
 import styled from "styled-components";
 
 export const InputStyle = styled.input`
-    width: 300px;
-    margin-top: 30px;
-    border-radius: 5px;
-    background: beige;
+    font-size: 12px;
+    font-weight: bold;
+    color: red; 
+    margin-top: 8px;
+    width: 250px;
+`
+export const Label = styled.label`
+    font-size: 12px;
+    font-weight: bold;
+    color: gray;
+    margin-bottom: 12px;
 `
