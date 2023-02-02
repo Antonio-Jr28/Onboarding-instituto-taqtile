@@ -1,5 +1,6 @@
 import React, { useState} from 'react'
 
+
 import { Wrapper, Title, UsersName, UsersEmail, Container, BoxName, BoxEmail, Navigation, BtnPrevious, BtnNext, BtnCreateUser, Details, BtnDetails } from './list-style'
 import { getUsersQuery } from "../../service/get-user-query";
 import { useQuery } from '@apollo/client';
