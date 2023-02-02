@@ -29,7 +29,7 @@ export const DetailsUser = () => {
                 <ListUser>Nome do Usuário: {data?.user?.name} </ListUser>
                 <ListUser>E-mail do Usuário: {data?.user?.email} </ListUser>
                 <ListUser>Telefone: {data?.user?.phone} </ListUser>
-                <ListUser>Aniversario: {data?.user?.birthdaDate} </ListUser>
+                <ListUser>Aniversario: {data?.user?.birthDate} </ListUser>
                 <ListUser>id: {data?.user?.id} </ListUser>
                 <ListUser>Permissão: {data?.user?.role} </ListUser>
                 

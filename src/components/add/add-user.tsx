@@ -35,7 +35,7 @@ export const AddUser = ():JSX.Element => {
         },
     })
     
-    function enviar(e: { preventDefault: () => void }) {
+    function toSend(e: { preventDefault: () => void }) {
         e.preventDefault();
 
         newUser({
@@ -47,7 +47,7 @@ export const AddUser = ():JSX.Element => {
     
     
     return (
-        <Form onSubmit={enviar}>
+        <Form onSubmit={toSend}>
             <Title>Criar Conta </Title>
 
             <Label>Name:</Label>
