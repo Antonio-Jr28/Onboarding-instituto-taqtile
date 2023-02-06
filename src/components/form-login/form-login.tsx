@@ -3,9 +3,9 @@ import { useMutation  } from '@apollo/client';
 import { QueryLogar } from '../../service/request-login';
 import { useNavigate } from 'react-router-dom';
 import { WrapperLogin, Form } from './form-style';
-import { Title } from '../title/title';
-import { Input } from '../input/input';
-import { Button } from '../button/button';
+import { Title } from '../atm-title/title';
+import { Input } from '../atm-input/input';
+import { Button } from '../atm-button/button';
 
 export const FormLogin = ():JSX.Element => {
    const [email, setEmail] = useState('');

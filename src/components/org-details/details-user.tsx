@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import { useParams } from "react-router-dom";
 import { getDetails } from '../../service/get-user-details-query';
 import { ContainerUser, ListUser, SectionUser, SortedList } from './details-user-style';
-import { Title } from '../title/title';
+import { Title } from '../atm-title/title';
 
 
 
