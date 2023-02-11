@@ -5,7 +5,7 @@ import { Wrapper, UsersName, UsersEmail, Container, BoxName, BoxEmail, Navigatio
 import { getUsersQuery } from "../../service/get-user-query";
 import { useQuery } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
-import { Title } from '../title/title';
+import { Title } from '../atm-title/title';
 interface UserType {
   id: number | 'string';
   email: 'string';

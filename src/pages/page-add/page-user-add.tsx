@@ -1,5 +1,5 @@
 import React from "react";
-import { AddUser } from "../../components/add/add-user";
+import { AddUser } from "../../components/org-add/add-user";
 
 export const PageAdd = ():JSX.Element => 
     <AddUser />

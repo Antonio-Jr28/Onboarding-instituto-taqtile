@@ -1,6 +1,6 @@
 import React from "react";
 
-import { FormLogin } from "../../components/form-login/form-login";
+import { FormLogin } from "../../components/org-form-login/form-login";
 import { Section } from "./page-login-style";
 
 

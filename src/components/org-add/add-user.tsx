@@ -4,10 +4,10 @@ import { ApolloError, useMutation } from "@apollo/client";
 import { useNavigate } from "react-router-dom";
 import { createUser } from "../../service/create-user-mutation";
 import { Form, Label, Input, Container, Wrapper, List, Box } from "./add-user-style";
-import { Title } from "../title/title";
-import { InputStyle } from "../input/input-style";
+import { Title } from "../atm-title/title";
+import { InputStyle } from "../atm-input/input-style";
 
-import { Button } from "../button/button"
+import { Button } from "../atm-button/button"
 
 export const AddUser = ():JSX.Element => {
     const today = new Date().toISOString().split('T')[0];
